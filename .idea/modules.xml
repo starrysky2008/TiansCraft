@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/tianscraft.common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/tianscraft.common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/tianscraft.common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/common/tianscraft.common.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/tianscraft.common.test.iml" filepath="$PROJECT_DIR$/.idea/modules/common/tianscraft.common.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric/tianscraft.fabric.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric/tianscraft.fabric.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric/tianscraft.fabric.main.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric/tianscraft.fabric.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric/tianscraft.fabric.test.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric/tianscraft.fabric.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/neoforge/tianscraft.neoforge.iml" filepath="$PROJECT_DIR$/.idea/modules/neoforge/tianscraft.neoforge.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/neoforge/tianscraft.neoforge.main.iml" filepath="$PROJECT_DIR$/.idea/modules/neoforge/tianscraft.neoforge.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/neoforge/tianscraft.neoforge.test.iml" filepath="$PROJECT_DIR$/.idea/modules/neoforge/tianscraft.neoforge.test.iml" />
+    </modules>
+  </component>
+</project>

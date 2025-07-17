@@ -1,0 +1,28 @@
+{
+	"overrides": [
+		{
+			"predicate": {
+				"pulling": 1
+			},
+			"model": "item/bow"
+		},
+		{
+			"predicate": {
+				"pulling": 1,
+				"pull": 0.65
+			},
+			"model": "tianscraft:item/boat_launcher_pulling_1"
+		},
+		{
+			"predicate": {
+				"pulling": 1,
+				"pull": 0.9
+			},
+			"model": "tianscraft:item/boat_launcher_pulling_2"
+		}
+	],
+	"parent": "minecraft:item/bow",
+	"textures": {
+		"layer0": "tianscraft:item/boat_launcher"
+	}
+}

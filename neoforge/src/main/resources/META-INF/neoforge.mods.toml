@@ -1,0 +1,38 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+#issueTrackerURL = ""
+license = "MIT"
+
+[[mods]]
+modId = "tianscraft"
+version = "${version}"
+displayName = "TiansCraft"
+authors = "星空·幻想和匿名兲粉丝群的各路妖魔"
+description = '''
+没错，这是兲的世界
+'''
+logoFile = "assets/tianscraft/icon.png"
+
+[[dependencies.tianscraft]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.tianscraft]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.tianscraft]]
+modId = "architectury"
+type = "required"
+versionRange = "[13.0.8,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[mixins]]
+config = "tianscraft.mixins.json"

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "tianscraft",
+  "version": "${version}",
+  "name": "TiansCraft",
+  "description": "没错，这是兲的世界",
+  "authors": [
+    "星空·幻想",
+    "匿名兲粉丝群的各路妖魔"
+  ],
+  "contact": {
+  },
+  "license": "MIT",
+  "icon": "assets/tianscraft/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "top.sunsetlab.tianscraft.fabric.ModMainFabric"
+    ],
+    "client": [
+      "top.sunsetlab.tianscraft.fabric.client.ModMainFabricClient"
+    ]
+  },
+  "mixins": [
+    "tianscraft.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.14",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "architectury": ">=13.0.8"
+  },
+  "suggests": {
+  }
+}

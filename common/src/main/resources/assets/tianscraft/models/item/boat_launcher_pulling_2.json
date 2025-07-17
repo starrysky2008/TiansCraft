@@ -1,0 +1,6 @@
+{
+  "parent": "tianscraft:item/boat_launcher",
+  "textures": {
+    "layer0": "tianscraft:item/boat_launcher_pulling_2"
+  }
+}
