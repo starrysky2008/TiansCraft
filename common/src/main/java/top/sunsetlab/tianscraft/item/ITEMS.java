@@ -12,22 +12,22 @@ import net.minecraft.world.item.Rarity;
 import top.sunsetlab.tianscraft.ModMain;
 
 public class ITEMS {
-    public static DeferredRegister<Item> itemDeferredRegister;
-    public static DeferredRegister<CreativeModeTab> creativeModeTabDeferredRegister;
-    public static RegistrySupplier<Item> itemBoatLauncher;
-    public static RegistrySupplier<Item> itemTian;
-    public static RegistrySupplier<CreativeModeTab> tiansCraftTab;
+    public static final DeferredRegister<Item> itemDeferredRegister;
+    public static final DeferredRegister<CreativeModeTab> creativeModeTabDeferredRegister;
+    public static final RegistrySupplier<Item> itemBoatLauncher;
+    public static final RegistrySupplier<Item> itemTian;
+    public static final RegistrySupplier<CreativeModeTab> tiansCraftTab;
 
     static {
-        creativeModeTabDeferredRegister = DeferredRegister.create(ModMain.MOD_ID, Registries.CREATIVE_MODE_TAB);
-        tiansCraftTab = creativeModeTabDeferredRegister.register("tianscraft", () -> CreativeTabRegistry.create(
-                Component.translatable("itemGroup.tianscraft"),
-                () -> new ItemStack(itemTian.get())));
         itemDeferredRegister = DeferredRegister.create(ModMain.MOD_ID, Registries.ITEM);
         itemBoatLauncher = itemDeferredRegister.register("boat_launcher", BoatLauncher::new);
         itemTian = itemDeferredRegister.register("tian",() -> new Item(new Item.Properties()
                 .rarity(Rarity.EPIC)
                 .stacksTo(4)));
+        creativeModeTabDeferredRegister = DeferredRegister.create(ModMain.MOD_ID, Registries.CREATIVE_MODE_TAB);
+        tiansCraftTab = creativeModeTabDeferredRegister.register("tianscraft", () -> CreativeTabRegistry.create(
+                Component.translatable("itemGroup.tianscraft"),
+                () -> new ItemStack(itemTian.get())));
     }
 
     public static void register() {
