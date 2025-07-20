@@ -13,15 +13,17 @@ import top.sunsetlab.tianscraft.entity.EntityTian;
 
 public class TianRenderer extends MobRenderer<EntityTian, PlayerModel<EntityTian>> {
     public static void init() {
-        EntityRendererRegistry.register(() -> ENTITIES.entityTian.get(), TianRenderer::new);
+        // 注册渲染器，不然会崩溃
+        EntityRendererRegistry.register(ENTITIES.entityTian, TianRenderer::new);
     }
 
     public TianRenderer(EntityRendererProvider.Context context) {
-        super(context, new PlayerModel<>(context.bakeLayer(ModelLayers.PLAYER), false), 0.5F);
+        super(context, new PlayerModel<>(context.bakeLayer(ModelLayers.PLAYER_SLIM), false), 0.5F);
     }
 
     @Override
     public @NotNull ResourceLocation getTextureLocation(EntityTian entity) {
+        // 匿名材质（群里偷的）
         return ResourceLocation.fromNamespaceAndPath("tianscraft","textures/entity/tian.png");
     }
 }

@@ -12,9 +12,9 @@ import top.sunsetlab.tianscraft.ModMain;
 import top.sunsetlab.tianscraft.entity.render.TianRenderer;
 
 public class ENTITIES {
-    public static DeferredRegister<EntityType<?>> deferredRegister;
-    public static RegistrySupplier<EntityType<EntityTian>> entityTian;
-    public static Logger logger = LogUtils.getLogger();
+    public static final DeferredRegister<EntityType<?>> deferredRegister;
+    public static final RegistrySupplier<EntityType<EntityTian>> entityTian;
+    public static final Logger logger = LogUtils.getLogger();
 
     static {
         deferredRegister = DeferredRegister.create(ModMain.MOD_ID, Registries.ENTITY_TYPE);
@@ -28,8 +28,11 @@ public class ENTITIES {
     }
 
     public static void register(){
+        // 注册实体，渲染器，属性
+        logger.debug("Fucking Entity Registration started");
         deferredRegister.register();
         TianRenderer.init();
-        EntityAttributeRegistry.register(() -> entityTian.get(), EntityTian::createMobAttributes);
+        EntityAttributeRegistry.register(entityTian, EntityTian::createAttributes);
+        logger.debug("Fucking Entity Registration ended");
     }
 }
