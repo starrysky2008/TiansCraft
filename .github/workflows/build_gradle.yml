@@ -1,0 +1,20 @@
+on:
+  push:
+    branches:
+    - main
+jobs:
+  gradle:
+    name: build gradle project
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/setup-java@v3.14.1
+      with:
+        java-version: 21
+        distribution: temurin
+    - uses: gradle/actions@v4.4.1
+    - uses: actions/upload-artifact@v4
+      with:
+        name: files
+        path: |
+          $GITHUB_WORKSPACE/fabric/build/libs/*.jar
+          $GITHUB_WORKSPACE/neoforge/build/libs/*.jar
