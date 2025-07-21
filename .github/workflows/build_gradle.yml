@@ -21,5 +21,5 @@ jobs:
       with:
         name: files
         path: |
-          $GITHUB_WORKSPACE/fabric/build/libs/*.jar
-          $GITHUB_WORKSPACE/neoforge/build/libs/*.jar
+          ./fabric/build/libs/*.jar
+          ./neoforge/build/libs/*.jar
