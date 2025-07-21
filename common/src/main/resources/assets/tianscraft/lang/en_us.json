@@ -1,5 +1,6 @@
 {
   "item.tianscraft.boat_launcher": "Boat Launcher",
   "item.tianscraft.tian": "anonymous_tian",
-  "itemGroup.tianscraft": "Tian's world"
+  "itemGroup.tianscraft": "Tian's world",
+  "entity.tianscraft.tian": "Anonymity Tian"
 }

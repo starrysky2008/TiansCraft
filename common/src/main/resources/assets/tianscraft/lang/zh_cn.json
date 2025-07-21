@@ -1,5 +1,6 @@
 {
   "item.tianscraft.boat_launcher": "木船发射器",
   "item.tianscraft.tian": "匿名兲",
-  "itemGroup.tianscraft": "兲的世界"
+  "itemGroup.tianscraft": "兲的世界",
+  "entity.tianscraft.tian": "匿名兲"
 }

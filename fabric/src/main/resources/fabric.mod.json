@@ -13,6 +13,7 @@
   "license": "MIT",
   "icon": "assets/tianscraft/icon.png",
   "environment": "*",
+  "accessWidener": "tianscraft.accesswidener",
   "entrypoints": {
     "main": [
       "top.sunsetlab.tianscraft.fabric.ModMainFabric"

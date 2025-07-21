@@ -33,6 +33,7 @@ subprojects {
 
     loom {
         silentMojangMappingsLicense()
+        accessWidenerPath = file("../common/src/main/resources/tianscraft.accesswidener")
     }
 
     dependencies {
