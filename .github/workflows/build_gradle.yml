@@ -4,14 +4,19 @@ on:
     - main
 jobs:
   gradle:
-    name: build gradle project
+    name: 构建项目
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/setup-java@v3.14.1
+    - uses: actions/checkout@v4
+    - name: 配置java环境
+      uses: actions/setup-java@v3.14.1
       with:
         java-version: 21
         distribution: temurin
-    - uses: gradle/actions@v4.4.1
+    - name: 设置gradle
+      uses: gradle/actions/setup-gradle@v4.4.1
+    - name: 编译
+      run: ./gradlew build
     - uses: actions/upload-artifact@v4
       with:
         name: files
