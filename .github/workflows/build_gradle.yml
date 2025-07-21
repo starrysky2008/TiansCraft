@@ -17,9 +17,13 @@ jobs:
       uses: gradle/actions/setup-gradle@v4.4.1
     - name: 编译
       run: ./gradlew build
-    - uses: actions/upload-artifact@v4
+    - name: 上传fabric构建
+      uses: actions/upload-artifact@v4
       with:
-        name: files
-        path: |
-          ./fabric/build/libs/*.jar
-          ./neoforge/build/libs/*.jar
+        name: fabric
+        path: ./fabric/build/libs/*.jar
+    - name: 上传forge构建
+      uses: actions/upload-artifact@v4
+      with:
+        name: forge
+        path: ./neoforge/build/libs/*.jar
