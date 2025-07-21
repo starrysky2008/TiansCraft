@@ -24,6 +24,8 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
+
 // 非常好的妖魔兲
 public class EntityTian extends AbstractIllager {
     /**
@@ -108,19 +110,19 @@ public class EntityTian extends AbstractIllager {
     public void tick() {
         super.tick();
         // 在20格内搜索玩家/铁傀儡/村民
-        for(Entity ent:this.level().getEntities(
-                (Entity) null,
-                new AABB(this.blockPosition().getBottomCenter().add(-20, -5, -20),
-                        this.blockPosition().getBottomCenter().add(20, 5, 20)),
-                (entity) -> entity instanceof IronGolem
-                        || (entity instanceof Player && !((Player) entity).isCreative())
-                        || entity instanceof Villager
-        )){
-            // 如果目标存在
-            if(ent instanceof LivingEntity livingEntity){
-                // 设为攻击目标
-                this.setTarget(livingEntity);
-            }
+        if(this.getTarget()!=null && this.getTarget().isAlive()) {
+            List<Entity> entities = this.level().getEntities(
+                    (Entity) null,
+                    new AABB(this.blockPosition().getBottomCenter().add(-20, -5, -20),
+                            this.blockPosition().getBottomCenter().add(20, 5, 20)),
+                    (entity) -> (entity instanceof IronGolem
+                            || (entity instanceof Player && !((Player) entity).isCreative())
+                            || entity instanceof Villager)
+                            && entity instanceof LivingEntity);
+            // 随机选取
+            this.setTarget((LivingEntity) entities.get(random.nextInt(entities.size())));
+        }else if (!this.getTarget().isAlive()) {
+            this.setTarget(null);
         }
         // 自动回家
         if(this.navigation.isDone() && home != null){
@@ -132,7 +134,7 @@ public class EntityTian extends AbstractIllager {
         if(this.cooldown_heal > 0) cooldown_heal--;
 
         // 豪火球之术！
-        if(this.getTarget() != null && cooldown_skill == 0) {
+        if(this.getTarget() != null && this.getTarget().isAlive() && cooldown_skill == 0) {
             this.getLookControl().setLookAt(this.getTarget());
             // 一个从自身到目标的单位向量
             Vec3 motion = this.getTarget().blockPosition().getCenter().add(
